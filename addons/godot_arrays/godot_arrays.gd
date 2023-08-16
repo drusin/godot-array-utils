@@ -1,4 +1,4 @@
-class_name Arrays
+class_name ArrayUtils
 extends Object
 
 enum {
@@ -8,7 +8,7 @@ enum {
 
 
 func _init():
-	push_error("This class is not meant for instanncing, use the static functions instead")
+	push_error("This class is not meant for instancing, use the static functions instead")
 
 
 static func sort(input: Array, comparator: Callable, direction := ASC) -> void:
