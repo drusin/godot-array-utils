@@ -1,19 +1,15 @@
 class_name ArrayUtils
 extends Object
 
-## A collection of static utility function for arrays in GDscript
+## A collection of static utility function for arrays in GDScript
 ##
 ## Currently, only a stable sorting implementation is present
 
-
+## Sorting direction
 enum Direction {
 	ASC = 1,
 	DESC = -1
 }
-
-
-func _init():
-	push_error("This class is not meant for instancing, use the static functions instead")
 
 ## Sorts the provided input in a [b]stable[/b] manner, which means that elements already in the right
 ## will not be rearranged. Current implementation might degrade in performance for big arrays 
@@ -25,14 +21,14 @@ func _init():
 ## integer[/b] if the first element is smaller than the second, [b]zero[/b] if the elements are equal,
 ## and a [b]positive integer[/b] if the first element is larger than the second. The class [Comparators]
 ## provides comparator implementations for a few common data types.[br]
-## [param direction]: provide [code]Direction.DESC[/code] to have the array sorted in a decending manner[br]
+## [param direction]: ascending by default, provide [code]Direction.DESC[/code] to have the array sorted in a decending manner[br]
 ## [br]
 ## Example use:
 ## [codeblock]
 ## var array := [2, 5, 3, 1, 4]
-## ArrayUtils.sort(array, Comparators.NUMBER)
+## ArrayUtils.sort(array, Comparators.NUMBER, ArrayUtils.Direction.DESC)
 ## print(array)
-## => [1, 2, 3, 4, 5]
+## => [5, 4, 3, 2, 1]
 ## [/codeblock]
 static func sort(input: Array, comparator: Callable, direction := Direction.ASC) -> void:
 	_insertion_sort(input, comparator, direction)

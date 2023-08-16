@@ -3,10 +3,10 @@ extends RefCounted
 
 ## Collection of comparators for sorting, meant for use in [method ArrayUtils.sort]
 ##
-## The functions with names in CAPS_CASE are meant to be passed as callables, e.g. 
-## [code]ArrayUtils.sort(some_input, Comparators.NUMBER)[/code]
+## The functions with names written in CAPS_CASE are meant to be passed as callables and not called
+## as functions, e.g. [code]ArrayUtils.sort(some_input, Comparators.NUMBER)[/code]
 
-## For comparing numbers. If GDscript can substract the values from each other, it should work
+## For comparing numbers. If GDScript can substract the values from each other, it should work
 static func NUMBER(left, right) -> int:
 	return left - right
 
