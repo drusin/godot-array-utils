@@ -43,7 +43,15 @@ var test_suite := {
 		var comparator := _dict_array_comparator()
 		ArrayUtils.sort(input, comparator, ArrayUtils.DESC)
 		var names = input.map(func (val): return val["name"])
-		assert(names == ["Five", "Three1", "Three2", "Three3", "One"])
+		assert(names == ["Five", "Three1", "Three2", "Three3", "One"]),
+	
+	"test for_field" = func () -> void:
+		var input := _dict_array_input()
+		var comparator = Comparators.for_field("number", Comparators.NUMBER)
+		ArrayUtils.sort(input, comparator)
+		var names = input.map(func (val): return val["name"])
+		assert(names == ["One", "Three1", "Three2", "Three3", "Five"]),
+	
 }
 
 

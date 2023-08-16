@@ -24,4 +24,4 @@ static func STR_NATURAL_NO_CASE(left: String, right: String) -> int:
 
 static func for_field(field_name: String, comparator: Callable) -> Callable:
 	return func (left, right):
-		comparator.call(left[field_name], right[field_name])
+		return comparator.call(left[field_name], right[field_name])
