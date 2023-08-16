@@ -18,7 +18,7 @@ var test_suite := {
 	
 	"test int desc" = func () -> void:
 		var input := [4, 2, 6, 1, 3, 5]
-		ArrayUtils.sort(input, Comparators.NUMBER, ArrayUtils.DESC)
+		ArrayUtils.sort(input, Comparators.NUMBER, ArrayUtils.Direction.DESC)
 		assert(input == [6, 5, 4, 3, 2, 1]),
 	
 	"test str asc" = func () -> void:
@@ -28,7 +28,7 @@ var test_suite := {
 	
 	"test str desc" = func () -> void:
 		var input := ["Beate", "Arnold", "Vincent", "Gregory", "Mike"]
-		ArrayUtils.sort(input, Comparators.STR_NO_CASE, ArrayUtils.DESC)
+		ArrayUtils.sort(input, Comparators.STR_NO_CASE, ArrayUtils.Direction.DESC)
 		assert(input == ["Vincent", "Mike", "Gregory", "Beate", "Arnold"]),
 	
 	"test stable asc" = func () -> void:
@@ -41,7 +41,7 @@ var test_suite := {
 	"test stable desc" = func () -> void:
 		var input = _dict_array_input()
 		var comparator := _dict_array_comparator()
-		ArrayUtils.sort(input, comparator, ArrayUtils.DESC)
+		ArrayUtils.sort(input, comparator, ArrayUtils.Direction.DESC)
 		var names = input.map(func (val): return val["name"])
 		assert(names == ["Five", "Three1", "Three2", "Three3", "One"]),
 	
